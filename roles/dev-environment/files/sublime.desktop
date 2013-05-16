@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Sublime Text Editor
+Comment=Sublime Text Editor
+Exec="/usr/local/sublime-text-2/sublime_text" %F
+MimeType=text/plain;
+Terminal=false
+Type=Application
+Icon=sublime_text
+Categories=Accessories;TextEditor;Development;Utility;

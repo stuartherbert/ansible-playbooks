@@ -1,0 +1,5 @@
+---
+
+- name: install vim
+  action: apt pkg=vim-gtk state=latest
+  sudo: True

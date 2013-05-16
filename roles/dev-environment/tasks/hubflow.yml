@@ -1,0 +1,21 @@
+---
+- name: check if hubflow already installed
+  action: command git hf version
+  register: hubflow_version
+
+- name: create the folder to clone gitflow into
+  action: file path=/home/$user/Devel/datasift state=directory
+  sudo: False
+
+- name: clone the hubflow repo
+  action: git repo=http://github.com/datasift/gitflow.git dest=/home/$user/Devel/datasift/gitflow version=develop
+  sudo: False
+
+- name: clone the hubflow repo for the documentation
+  action: git repo=http://github.com/datasift/gitflow.git dest=/home/$user/Devel/datasift/gitflow-docs version=gh-pages
+  sudo: False
+
+- name: install gitflow
+  action: command ./install.sh chdir=/home/$user/Devel/datasift/gitflow
+  sudo: True
+  when: "'latest version' not in hubflow_version.stdout"

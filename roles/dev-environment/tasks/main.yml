@@ -1,0 +1,5 @@
+---
+- include: git.yml
+- include: hubflow.yml
+- include: vim.yml
+- include: sublime-text-2.yml

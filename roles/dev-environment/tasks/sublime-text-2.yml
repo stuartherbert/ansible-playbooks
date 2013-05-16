@@ -1,0 +1,31 @@
+---
+
+- name: check for Sublime Text 2 already unpacked
+  action: command ls '/usr/local/'
+  register: st2_unpacked
+  ignore_errors: True
+
+- name: download Sublime Text 2
+  action: get_url url=http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1%20x64.tar.bz2 dest=/tmp/sublime-text-2.0.1-x64.tar.bz2
+  when: "'sublime-text-2' not in st2_unpacked.stdout"
+
+- name: unpack Sublime Text 2
+  action: command tar -C /usr/local -jxf '/tmp/sublime-text-2.0.1-x64.tar.bz2' creates='/usr/local/Sublime Text 2'
+  sudo: True
+  when: "'sublime-text-2' not in st2_unpacked.stdout"
+
+- name: move Sublime Text 2 into right place
+  action: command mv '/usr/local/Sublime Text 2' /usr/local/sublime-text-2 creates=/usr/local/sublime-text-2 removes='/usr/local/Sublime Text 2'
+  sudo: True
+
+- name: create ST2 desktop entry
+  action: copy src=sublime.desktop dest=/usr/share/applications/sublime.desktop owner=root mode=0644
+  sudo: True
+
+- name: create local folder for ST2 Package Control
+  action: file 'path=/home/$user/.config/sublime-text-2/Installed Packages' state=directory
+  sudo: False
+
+- name: download ST2 Package Control
+  action: get_url url=https://sublime.wbond.net/Package%20Control.sublime-package 'dest=/home/$user/.config/sublime-text-2/Installed Packages/Package Control.sublime-package'
+  sudo: False
