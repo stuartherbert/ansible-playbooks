@@ -7,13 +7,19 @@
   action: file path=/home/$user/Devel/datasift state=directory
   sudo: False
 
+- name: check for existing hubflow repo
+  action: command ls /home/$user/Devel/datasift
+  register: hubflow_ls
+
 - name: clone the hubflow repo
-  action: git repo=http://github.com/datasift/gitflow.git dest=/home/$user/Devel/datasift/gitflow version=develop
+  action: git repo=git@github.com:datasift/gitflow.git dest=/home/$user/Devel/datasift/gitflow version=develop
   sudo: False
+  when: "'gitflow' not in hubflow_ls.stdout"
 
 - name: clone the hubflow repo for the documentation
-  action: git repo=http://github.com/datasift/gitflow.git dest=/home/$user/Devel/datasift/gitflow-docs version=gh-pages
+  action: git repo=git@github.com:datasift/gitflow.git dest=/home/$user/Devel/datasift/gitflow-docs version=gh-pages
   sudo: False
+  when: "'gitflow' not in hubflow_ls.stdout"
 
 - name: install gitflow
   action: command ./install.sh chdir=/home/$user/Devel/datasift/gitflow
