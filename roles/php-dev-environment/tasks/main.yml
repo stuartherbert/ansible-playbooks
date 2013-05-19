@@ -2,6 +2,8 @@
 
 - include: pear.yml
 - include: apc.yml
+- include: curl.yml
+- include: sqlite.yml
 - include: xdebug.yml
 - include: yaml.yml
 - include: phix.yml
