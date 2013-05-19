@@ -1,0 +1,16 @@
+---
+
+- name: stop Apache
+  action: command /etc/init.d/apache2 stop
+  sudo: True
+
+- name: start Apache
+  action: command /etc/init.d/apache2 start
+  sudo: True
+
+- name: reload Apache
+  action: command /etc/init.d/apache2 reload
+  sudo: True
+
+- name: restart Apache
+  action: command /etc/init.d/apache2 restart

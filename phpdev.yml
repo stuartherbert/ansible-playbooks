@@ -3,4 +3,5 @@
   roles:
 #  - common
   - dev-environment
-#  - webserver
+  - php-webserver
+  - php-dev-environment

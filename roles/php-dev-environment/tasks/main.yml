@@ -1,0 +1,6 @@
+---
+
+- include: pear.yml
+- include: apc.yml
+- include: xdebug.yml
+- include: phix.yml

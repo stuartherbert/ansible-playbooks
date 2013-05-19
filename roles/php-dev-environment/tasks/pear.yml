@@ -1,0 +1,8 @@
+---
+
+- name: Install PEAR
+  action: apt pkg=php-pear state=latest
+
+- name: Set PEAR up to auto-discover channels
+  action: command pear config-set auto_discover 1
+  sudo: True

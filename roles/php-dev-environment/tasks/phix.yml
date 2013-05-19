@@ -1,0 +1,20 @@
+---
+
+- name: check for Phix installation
+  action: command ls /usr/bin
+  register: phix_ls
+
+- name: download Phix installer
+  action: get_url url=http://phix-project.org/installers/ubuntu-11.04.sh dest=/tmp/phix-installer.sh
+  sudo: False
+
+- name: make Phix installer executable
+  action: file path=/tmp/phix-installer.sh mode=0755
+
+- name: copy Phix expect script
+  action: copy src=phix.exp dest=/tmp/phix.exp mode=0755
+
+- name: install Phix
+  action: command /tmp/phix.exp
+  sudo: True
+  when: "'phix' not in phix_ls.stdout"

@@ -1,0 +1,11 @@
+---
+
+- name: Install PHP 5
+  action: apt pkg=php5 state=latest
+
+- name: Install PEAR
+  action: apt pkg=php-pear state=latest
+
+- name: enable mod_rewrite for Apache
+  action: command a2enmod rewrite
+  notify: restart Apache
