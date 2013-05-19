@@ -2,4 +2,8 @@
 - include: git.yml
 - include: hubflow.yml
 - include: vim.yml
+- include: ctags.yml
 - include: sublime-text-2.yml
+- include: expect.yml
+- include: virtualbox.yml
+- include: vagrant.yml
