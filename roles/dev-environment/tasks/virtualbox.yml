@@ -1,0 +1,7 @@
+---
+
+- name: add Virtualbox to list of sources
+  action: copy src=virtualbox-raring.list dest=/etc/apt/sources.list.d/virtualbox-raring.list owner=root group=root mode=0644
+
+- name: install virtualbox
+  action: apt pkg=virtualbox state=latest
