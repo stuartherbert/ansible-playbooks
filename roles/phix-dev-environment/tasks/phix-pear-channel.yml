@@ -1,0 +1,16 @@
+---
+
+- name: make sure the webroot is writeable
+  action: file path=${webroot} owner=${user} group=${group} state="directory"
+  sudo: True
+
+- name: clone the Phix PEAR channel
+  action: git repo=git@github.com:${phix_github_user}/pear.phix-project.org.git dest=${webroot}/pear.phix-project.org
+  sudo: False
+
+- name: install local Phix Pear site
+  action: copy src=pear.phix-project.org.site dest=/etc/apache2/sites-available/pear.phix-project.org owner=root mode=0644
+
+- name: enable local Phix Pear site
+  action: command a2ensite pear.phix-project.org
+  notify: reload Apache

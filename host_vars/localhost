@@ -1,5 +1,14 @@
 ---
 ansible_connection: local
 user: stuart
+group: stuart
 
+# Apache2 settings
+webroot: /var/www
+
+# NodeJS settings
 node_version: 0.10.7
+
+# Phix development settings
+phix_dragondisk_version: 1.0.5
+phix_github_user: stuartherbert

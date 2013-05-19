@@ -1,5 +1,6 @@
-[php-dev-boxes]
-localhost
-
 [node-dev-boxes]
 localhost
+
+[phix-dev-boxes]
+localhost
+

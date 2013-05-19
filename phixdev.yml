@@ -1,0 +1,7 @@
+---
+- hosts: phix-dev-boxes
+  roles:
+  - dev-environment
+  - php-webserver
+  - php-dev-environment
+  - phix-dev-environment
