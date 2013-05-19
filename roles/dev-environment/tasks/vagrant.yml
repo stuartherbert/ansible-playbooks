@@ -11,3 +11,4 @@
 - name: install Vagrant
   action: command dpkg -i /tmp/vagrant_1.2.2_x86_64.deb
   sudo: True
+  when: "'vagrant' not in vagrant_which.stdout"
