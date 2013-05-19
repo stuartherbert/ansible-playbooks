@@ -29,3 +29,17 @@
 - name: download ST2 Package Control
   action: get_url url=https://sublime.wbond.net/Package%20Control.sublime-package 'dest=/home/$user/.config/sublime-text-2/Installed Packages/Package Control.sublime-package'
   sudo: False
+
+- name: check for PHPIDE plugin already unpacked
+  action: command ls '/home/$user/.config/sublime-text-2/Packages/'
+  register: phpide_unpacked
+  ignore_errors: True
+
+- name: install PHP IDE package
+  action: git repo=git@github.com:stuartherbert/sublime-phpide.git dest=/home/$user/.config/sublime-text-2/Packages/PHPIDE version=master
+  sudo: False
+  when: "'PHPIDE' not in phpide_unpacked.stdout"
+
+- name: symlink Sublime Text 2 for command-line usage
+  action: file src=/usr/local/sublime-text-2/sublime_text dest=/usr/local/bin/subl state=link
+  sudo: True
