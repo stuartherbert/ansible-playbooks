@@ -1,0 +1,4 @@
+---
+
+- name: install expect
+  action: apt pkg=expect-dev state=latest
