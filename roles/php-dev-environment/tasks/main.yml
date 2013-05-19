@@ -3,4 +3,5 @@
 - include: pear.yml
 - include: apc.yml
 - include: xdebug.yml
+- include: yaml.yml
 - include: phix.yml

@@ -1,0 +1,23 @@
+---
+
+- name: is PHP YAML extension already built?
+  action: shell pecl list | grep yaml
+  register: pecl_yaml
+  ignore_errors: True
+
+- name: install libYAML-dev
+  action: apt pkg=libyaml-dev state=latest
+  sudo: True
+
+- name: copy YAML script
+  action: copy src=php-yaml.exp dest=/tmp/php-yaml.exp mode=0700
+  when: "'yaml' not in pecl_yaml.stdout"
+
+- name: install YAML pecl module
+  action: command /tmp/php-yaml.exp
+  sudo: True
+  when: "'yaml' not in pecl_yaml.stdout"
+
+- name: install YAML config file
+  action: copy src=yaml.ini dest=/etc/php5/conf.d/yaml.ini
+  sudo: True
