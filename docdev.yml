@@ -1,0 +1,4 @@
+---
+- hosts: doc-dev-boxes
+  roles:
+  - doc-dev-environment

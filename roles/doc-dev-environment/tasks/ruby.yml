@@ -1,0 +1,7 @@
+---
+
+- name: install Ruby
+  action: apt pkg=ruby1.9.1 state=latest
+
+- name: install Ruby dev tools
+  action: apt pkg=ruby1.9.1-dev state=latest

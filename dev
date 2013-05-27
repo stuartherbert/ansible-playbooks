@@ -4,3 +4,5 @@ localhost
 [phix-dev-boxes]
 localhost
 
+[doc-dev-boxes]
+localhost
