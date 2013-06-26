@@ -21,3 +21,5 @@
 - name: install YAML config file
   action: copy src=yaml.ini dest=/etc/php5/conf.d/yaml.ini
   sudo: True
+  notify:
+  - restart Apache
