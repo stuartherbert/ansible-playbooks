@@ -12,3 +12,6 @@ node_version: 0.10.7
 # Phix development settings
 phix_dragondisk_version: 1.0.5
 phix_github_user: stuartherbert
+
+# Redis Server settings
+redis_version: 2.6.14
