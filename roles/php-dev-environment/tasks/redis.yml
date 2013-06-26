@@ -1,0 +1,34 @@
+---
+
+- name: is PHP Redis extension already built?
+  action: shell php -i | grep -i redis
+  register: php_redis
+
+- name: create the folder to clone PHP Redis extension into
+  action: file path=/home/$user/Devel/nicolasff state=directory
+  sudo: False
+
+- name: download PHP Redis extension
+  action: git repo=https://github.com/nicolasff/phpredis.git dest=/home/$user/Devel/nicolasff/phpredis
+  sudo: False
+
+- name: prepare PHP Redis extension
+  action: command phpize chdir=/home/$user/Devel/nicolasff/phpredis
+  sudo: False
+
+- name: configure PHP Redis extension
+  action: command ./configure chdir=/home/$user/Devel/nicolasff/phpredis
+  sudo: False
+
+- name: compile PHP Redis extension
+  action: command make chdir=/home/$user/Devel/nicolasff/phpredis
+  sudo: False
+
+- name: install PHP Redis extension
+  action: command make install chdir=/home/$user/Devel/nicolasff/phpredis
+
+- name: enable PHP Redis extension
+  action: copy src=redis.ini dest=/etc/php5/conf.d/yaml.ini
+  sudo: True
+  notify:
+  - restart Apache

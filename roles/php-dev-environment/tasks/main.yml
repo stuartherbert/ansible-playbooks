@@ -7,3 +7,4 @@
 - include: xdebug.yml
 - include: yaml.yml
 - include: phix.yml
+- include: redis.yml
