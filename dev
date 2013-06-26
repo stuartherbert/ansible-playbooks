@@ -6,3 +6,6 @@ localhost
 
 [doc-dev-boxes]
 localhost
+
+[readinglist-boxes]
+localhost

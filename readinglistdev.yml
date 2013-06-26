@@ -1,0 +1,4 @@
+---
+- hosts: readinglist-boxes
+  roles:
+  - redis-server
