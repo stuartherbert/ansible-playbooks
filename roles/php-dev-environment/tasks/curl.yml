@@ -2,6 +2,8 @@
 
 - name: install cURL extension for PHP
   action: apt pkg=php5-curl state=latest
+  sudo: True
 
 - name: install cURL command-line util
   action: apt pkg=curl state=latest
+  sudo: True

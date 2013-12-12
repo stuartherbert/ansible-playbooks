@@ -14,3 +14,4 @@
 
 - name: restart Apache
   action: command /etc/init.d/apache2 restart
+  sudo: True

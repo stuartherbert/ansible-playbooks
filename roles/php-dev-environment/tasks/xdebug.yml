@@ -2,3 +2,4 @@
 
 - name: install PHP Xdebug extension
   action: apt pkg=php5-xdebug state=latest
+  sudo: True

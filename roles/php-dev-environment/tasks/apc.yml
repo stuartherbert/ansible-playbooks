@@ -2,3 +2,4 @@
 
 - name: install PHP APC extension
   action: apt pkg=php-apc state=latest
+  sudo: True

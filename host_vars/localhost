@@ -7,7 +7,7 @@ group: stuart
 webroot: /var/www
 
 # NodeJS settings
-node_version: 0.10.7
+node_version: 0.10.20
 
 # Phix development settings
 phix_dragondisk_version: 1.0.5

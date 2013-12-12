@@ -2,3 +2,4 @@
 
 - name: install CTags
   action: apt pkg=exuberant-ctags state=latest
+  sudo: True

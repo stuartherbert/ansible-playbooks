@@ -1,3 +1,5 @@
 ---
 
-- include: nodejs.yml
+- include: nodejs_inspect.yml
+- include: nodejs_install.yml
+  when: "'v{{node_version}}' not in node_installed_version"

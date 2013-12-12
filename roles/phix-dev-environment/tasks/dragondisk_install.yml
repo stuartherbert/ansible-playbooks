@@ -1,0 +1,9 @@
+---
+
+- name: download Dragon Disk
+  action: get_url url=http://download.dragondisk.com/dragondisk_{{dragondisk_version}}-0ubuntu_amd64.deb dest=/tmp/dragondisk_{{dragondisk_version}}-0ubuntu_amd64.deb
+  sudo: False
+
+- name: install Dragon Disk
+  action: command dpkg -i /tmp/dragondisk_{{dragondisk_version}}-0ubuntu_amd64.deb
+  sudo: True

@@ -1,4 +1,6 @@
 ---
 
 - include: phix-pear-channel.yml
-- include: dragondisk.yml
+- include: dragondisk_inspect.yml
+- include: dragondisk_install.yml
+  when: "dragondisk_installed == 'false'"

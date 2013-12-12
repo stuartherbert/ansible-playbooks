@@ -1,0 +1,17 @@
+---
+
+- name: download NodeJS source code
+  action: get_url url=http://nodejs.org/dist/v{{node_version}}/node-v{{node_version}}.tar.gz dest=/tmp/node-v{{node_version}}.tar.gz
+  sudo: False
+
+- name: unpack NodeJS source code
+  action: command tar -zxf /tmp/node-v{{node_version}}.tar.gz creates=/tmp/node-v{{node_version}} chdir=/tmp
+  sudo: False
+
+- name: compile NodeJS
+  action: command make -j chdir=/tmp/node-v{{node_version}}
+  sudo: False
+
+- name: install NodeJS
+  action: command make install chdir=/tmp/node-v{{node_version}}
+  sudo: True

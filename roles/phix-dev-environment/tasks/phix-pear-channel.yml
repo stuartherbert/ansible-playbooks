@@ -9,8 +9,10 @@
   sudo: False
 
 - name: install local Phix Pear site
-  action: copy src=pear.phix-project.org.site dest=/etc/apache2/sites-available/pear.phix-project.org owner=root mode=0644
+  action: copy src=pear.phix-project.org.site dest=/etc/apache2/sites-available/pear.phix-project.org.conf owner=root mode=0644
+  sudo: True
 
 - name: enable local Phix Pear site
   action: command a2ensite pear.phix-project.org
+  sudo: True
   notify: reload Apache

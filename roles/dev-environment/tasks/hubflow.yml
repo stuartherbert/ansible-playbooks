@@ -2,6 +2,7 @@
 - name: check if hubflow already installed
   action: command git hf version
   register: hubflow_version
+  ignore_errors: True
 
 - name: create the folder to clone gitflow into
   action: file path=/home/$user/Devel/datasift state=directory
