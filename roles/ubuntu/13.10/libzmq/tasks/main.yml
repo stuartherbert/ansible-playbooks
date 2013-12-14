@@ -1,0 +1,4 @@
+---
+- include: libzmq_inspect.yml
+- include: libzmq_install.yml
+  when: "libzmq_installed != 'true'"

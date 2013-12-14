@@ -1,0 +1,16 @@
+---
+- name: download libzmq source code
+  action: get_url url=http://download.zeromq.org/zeromq-{{zeromq_version}}.tar.gz dest=/tmp/zeromq-{{zeromq_version}}.tar.gz
+
+- name: unpack libzmq source code
+  action: command tar -C /tmp -zxf '/tmp/zeromq-{{zeromq_version}}.tar.gz' creates='/tmp/zeromq-{{zeromq_version}}'
+
+- name: configure libzmq source code
+  action: command ./configure chdir='/tmp/zeromq-{{zeromq_version}}'
+
+- name: compile libzmq source code
+  action: command make -j chdir='/tmp/zeromq-{{zeromq_version}}'
+
+- name: install libzmq
+  action: command make install chdir='/tmp/zeromq-{{zeromq_version}}'
+  sudo: True
