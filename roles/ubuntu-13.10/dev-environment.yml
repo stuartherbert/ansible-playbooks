@@ -1,0 +1,9 @@
+---
+- hosts: dev-environment
+  roles:
+  - cmd-gcc-g++
+  - cmd-git
+  - cmd-hubflow
+  - cmd-ctags
+  - cmd-expect
+  - cmd-vim
