@@ -1,6 +1,7 @@
 ---
 - hosts: dev-environment
   roles:
+  - cmd-curl
   - cmd-gcc-g++
   - cmd-git
   - cmd-hubflow
