@@ -1,0 +1,4 @@
+---
+- name: is Vagrant already installed?
+  action: shell if ! `which vagrant > /dev/null` ; then echo false ; else if [[ `vagrant -v` != "Vagrant {{vagrant_version}}" ]]; then echo false; else echo true ; fi ; fi
+  register: vagrant_installed

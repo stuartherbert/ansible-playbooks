@@ -1,0 +1,17 @@
+---
+
+- name: add Virtualbox to list of sources
+  action: copy src=virtualbox.list dest=/etc/apt/sources.list.d/virtualbox.list owner=root group=root mode=0644
+  sudo: True
+
+- name: install VirtualBox package signing key
+  action: shell wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | apt-key add -
+  sudo: True
+
+- name: force update of packages list
+  action: command apt-get update
+  sudo: True
+
+- name: install virtualbox
+  action: apt pkg=virtualbox-4.3 state=latest
+  sudo: True

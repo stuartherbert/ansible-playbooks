@@ -1,0 +1,5 @@
+---
+- hosts: dev-virtualmachines
+  roles:
+  - cmd-virtualbox
+  - cmd-vagrant
