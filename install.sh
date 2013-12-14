@@ -12,6 +12,11 @@ site=$1
 inventory=$2
 shift 2
 
-export ANSIBLE_EXECUTABLE=/bin/bash
+# are we debugging?
+verbose=
+if [[ -n $DEBUG ]] ; then
+	verbose="-vvv"
+fi
+
 #export ANSIBLE_LIBRARY=`dirname $0`/modules
-ansible-playbook -vvv -i "$inventory" -K "$site" "$@"
+ansible-playbook $verbose -i "$inventory" -K "$site" "$@"
