@@ -1,0 +1,8 @@
+---
+dependencies:
+- { role: app-dragondisk }
+- { role: cmd-git }
+- { role: cmd-php }
+- { role: cmd-php-pear }
+- { role: cmd-composer }
+- { role: srv-apache-mod_php5 }

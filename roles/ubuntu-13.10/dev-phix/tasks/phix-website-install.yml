@@ -1,0 +1,14 @@
+---
+- name: clone the Phix doc repo
+  action: git repo=git@github.com:stuartherbert/www.phix-project.org.git dest=/{{apache_webroot}}/www.phix-project.org version=master
+  sudo: False
+
+- name: install local Phix Doc site Apache config
+  action: copy src=www.phix-project.org.conf dest=/etc/apache2/sites-available/www.phix-project.org.conf owner=root group=root mode=0644
+  sudo: True
+
+- name: enable local Phix Doc site
+  action: command a2ensite www.phix-project.org
+  sudo: True
+  notify:
+  - reload Apache

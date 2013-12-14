@@ -1,0 +1,5 @@
+---
+- hosts: project-phix
+  roles:
+  - srv-apache-mod_php5
+  - dev-phix

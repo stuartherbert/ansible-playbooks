@@ -1,0 +1,16 @@
+---
+- name: create the folder to clone phix into
+  action: file path=/home/{{user}}/Devel/stuartherbert state=directory
+  sudo: False
+
+- name: clone the phix repo
+  action: git repo=git@github.com:stuartherbert/phix.git dest=/home/{{user}}/Devel/stuartherbert/phix version=develop
+  sudo: False
+
+- name: clone the phix repo for the PEAR channel
+  action: git repo=git@github.com:stuartherbert/pear.phix-project.org.git dest=/{{apache_webroot}}/pear.phix-project.org version=master
+  sudo: False
+
+- name: clone the phix repo for the documentation
+  action: git repo=git@github.com:stuartherbert/www.phix-project.org.git dest=/{{apache_webroot}}/www.phix-project.org version=master
+  sudo: False

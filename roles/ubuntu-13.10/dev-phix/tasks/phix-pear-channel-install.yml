@@ -1,0 +1,14 @@
+---
+- name: clone the Phix PEAR channel repo
+  action: git repo=git@github.com:stuartherbert/pear.phix-project.org.git dest={{apache_webroot}}/pear.phix-project.org
+  sudo: False
+
+- name: install the Phix PEAR site Apache config
+  action: copy src=pear.phix-project.org.conf dest=/etc/apache2/sites-available/pear.phix-project.org.conf owner=root group=root mode=0644
+  sudo: True
+
+- name: enable local Phix Pear site
+  action: command a2ensite pear.phix-project.org
+  sudo: True
+  notify:
+  - reload Apache

@@ -1,0 +1,4 @@
+---
+- include: phix-dev-install.yml
+- include: phix-pear-channel-install.yml
+- include: phix-website-install.yml
