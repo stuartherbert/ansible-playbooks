@@ -1,0 +1,4 @@
+---
+- name: is VirtualBox already installed?
+  action: shell executable=/bin/bash if which VBoxHeadless > /dev/null ; then echo true ; else echo false ; fi
+  register: virtualbox_installed
