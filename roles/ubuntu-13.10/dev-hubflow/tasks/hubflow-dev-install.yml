@@ -1,0 +1,16 @@
+---
+- name: create the folder to clone hubflow into
+  action: file path=/home/{{user}}/Devel/datasift state=directory
+  sudo: False
+
+- name: clone the hubflow repo
+  action: git repo=git@github.com:datasift/gitflow.git dest=/home/{{user}}/Devel/datasift/gitflow version={{hubflow_version}}
+  sudo: False
+
+- name: clone the hubflow repo for the documentation
+  action: git repo=git@github.com:datasift/gitflow.git dest=/home/{{user}}/Devel/datasift/gitflow-docs version=gh-pages
+  sudo: False
+
+- name: install hubflow
+  action: command ./install.sh chdir=/home/{{user}}/Devel/datasift/gitflow
+  sudo: True
