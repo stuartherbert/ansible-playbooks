@@ -1,4 +1,4 @@
 ---
 - include: phpide_inspect.yml
 - include: phpide_install.yml
-  when: "st2_phpide_installed != 'true'"
+  when: "st2_phpide_installed.stdout != 'true'"
