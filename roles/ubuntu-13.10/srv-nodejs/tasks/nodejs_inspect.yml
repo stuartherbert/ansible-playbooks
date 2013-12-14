@@ -1,0 +1,6 @@
+---
+
+- name: is the right version of NodeJS already installed?
+  action: shell executable=/bin/bash if `which node` ; then if [[ `node --version` == "v{{nodejs_version}}" ]] ; then echo true ; else echo false ; fi ; else echo false ; fi
+  sudo: False
+  register: nodejs_installed

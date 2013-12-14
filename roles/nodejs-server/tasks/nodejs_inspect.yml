@@ -1,6 +1,0 @@
----
-
-- name: is the right version of NodeJS already installed?
-  action: shell if `which node` ; then node --version ; else echo 0 ; fi
-  register: node_installed_version
-  ignore_errors: true
