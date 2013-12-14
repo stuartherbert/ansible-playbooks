@@ -1,0 +1,4 @@
+---
+- include: dragondisk_inspect.yml
+- include: dragondisk_install.yml
+  when: "dragondisk_installed.stdout != 'true'"
