@@ -1,0 +1,4 @@
+---
+- name: is composer already installed?
+  action: shell executable=/bin/bash if [[ ! -x /usr/local/bin/composer ]]; then echo false ; else echo true ; fi
+  register: composer_installed

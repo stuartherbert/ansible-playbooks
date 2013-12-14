@@ -1,0 +1,4 @@
+---
+- include: composer-inspect.yml
+- include: composer-install.yml
+  when: "composer_installed.stdout != 'true'"
