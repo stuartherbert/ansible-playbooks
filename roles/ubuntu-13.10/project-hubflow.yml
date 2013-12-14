@@ -1,6 +1,5 @@
 ---
-- hosts: hubflow-dev
+- hosts: project-hubflow
   roles:
-  - cmd-git
   - cmd-hubflow
   - dev-hubflow
