@@ -1,0 +1,4 @@
+---
+- name: install Sublime Text 2 PHPIDE package
+  action: git repo=https://github.com/stuartherbert/sublime-phpide.git dest=/home/{{user}}/.config/sublime-text-2/Packages/PHPIDE version=master
+  sudo: False

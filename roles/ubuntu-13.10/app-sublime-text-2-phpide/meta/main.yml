@@ -1,0 +1,7 @@
+---
+dependencies:
+- { role: cmd-ctags }
+- { role: cmd-git }
+- { role: cmd-php }
+- { role: cmd-phpunit }
+- { role: app-sublime-text-2 }

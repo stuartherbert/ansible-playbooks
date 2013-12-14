@@ -1,0 +1,6 @@
+---
+
+- name: check for PHPIDE plugin already unpacked
+  action: shell if [[ -x '/home/{{user}}/.config/sublime-text-2/Packages/PHPIDE' ]]; then echo true ; else echo false ; fi
+  register: st2_phpide_installed
+  ignore_errors: True
