@@ -1,0 +1,4 @@
+---
+- include: hubflow_inspect.yml
+- include: hubflow_install.yml
+  when: "hubflow_installed.stdout != 'true'"

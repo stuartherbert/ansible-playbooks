@@ -1,0 +1,8 @@
+---
+- name: clone the HubFlow repo
+  action: git repo=https://github.com/datasift/gitflow.git dest=/tmp/hubflow version={{hubflow_version}}
+  sudo: False
+
+- name: install HubFlow
+  action: command ./install.sh chdir=/tmp/hubflow
+  sudo: True

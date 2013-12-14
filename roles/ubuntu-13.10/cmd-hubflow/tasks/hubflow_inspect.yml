@@ -1,0 +1,4 @@
+---
+- name: check if HubFlow already installed
+  action: shell executable=/bin/bash if [[ ! -e /usr/local/bin/hubflow-common ]] ; then echo false ; else source /usr/local/bin/hubflow-common ; if [[ $HUBFLOW_VERSION != '{{hubflow_version}}' ]] ; then echo false ; else echo true ; fi ; fi
+  register: hubflow_installed
