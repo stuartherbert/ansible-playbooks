@@ -1,0 +1,13 @@
+---
+
+- name: download Phix installer
+  action: get_url url=http://phix-project.org/installers/ubuntu-13.10.sh dest=/tmp/phix-installer.sh
+  sudo: False
+
+- name: make Phix installer executable
+  action: file path=/tmp/phix-installer.sh mode=0755
+  sudo: False
+
+- name: install Phix
+  action: command /tmp/phix-installer.sh chdir=/tmp
+  sudo: True

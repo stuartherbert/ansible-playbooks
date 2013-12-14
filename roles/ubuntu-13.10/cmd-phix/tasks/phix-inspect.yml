@@ -1,0 +1,5 @@
+---
+
+- name: check for Phix installation
+  action: shell if `which phix` ; then echo true ; else echo false ; fi
+  register: phix_installed

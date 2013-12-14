@@ -1,0 +1,4 @@
+---
+- include: phix-inspect.yml
+- include: phix-install.yml
+  when: "phix_installed.stdout != 'true'"
