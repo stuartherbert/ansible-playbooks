@@ -2,5 +2,4 @@
 - hosts: dev-github-pages
   roles:
   - cmd-git
-  - cmd-ruby
   - cmd-jekyll
