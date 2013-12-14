@@ -1,0 +1,4 @@
+---
+- hosts: nodejs-dev
+  roles:
+  - srv-nodejs

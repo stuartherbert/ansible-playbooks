@@ -1,5 +1,0 @@
----
-- hosts: node-dev-boxes
-  roles:
-  - dev-environment
-  - nodejs-server
