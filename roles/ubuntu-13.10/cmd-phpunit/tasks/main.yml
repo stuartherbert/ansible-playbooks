@@ -1,0 +1,4 @@
+---
+- include: phpunit-inspect.yml
+- include: phpunit-install.yml
+  when: "phpunit_installed.stdout != 'true'"

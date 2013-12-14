@@ -1,0 +1,4 @@
+---
+- name: is phpunit already installed?
+  action: shell executable=/bin/bash if [[ ! -x /usr/local/bin/phpunit ]]; then echo false ; else echo true ; fi
+  register: phpunit_installed

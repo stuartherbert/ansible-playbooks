@@ -1,0 +1,4 @@
+---
+- name: download phpunit
+  action: get_url url=https://phar.phpunit.de/phpunit.phar dest=/usr/local/bin/phpunit group=root mode=0755
+  sudo: True
