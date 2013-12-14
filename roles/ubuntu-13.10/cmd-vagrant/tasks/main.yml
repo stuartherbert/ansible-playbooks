@@ -1,4 +1,4 @@
 ---
 - include: vagrant_inspect.yml
 - include: vagrant_install.yml
-  when: "vagrant_installed != 'true'"
+  when: "vagrant_installed.stdout != 'true'"

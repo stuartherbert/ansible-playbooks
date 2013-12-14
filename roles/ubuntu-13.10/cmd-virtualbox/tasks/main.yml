@@ -1,2 +1,4 @@
 ---
+- include: virtualbox-inspect.yml
 - include: virtualbox_install.yml
+  when: "virtualbox_installed.stdout != 'true'"
