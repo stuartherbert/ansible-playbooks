@@ -1,0 +1,32 @@
+---
+
+- name: download Sublime Text 2
+  action: get_url url=http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20{{st2_version}}%20x64.tar.bz2 dest=/tmp/sublime-text-{{st2_version}}-x64.tar.bz2
+
+- name: unpack Sublime Text 2
+  action: command tar -C /usr/local -jxf '/tmp/sublime-text-2.0.2-x64.tar.bz2' creates='/usr/local/Sublime Text 2'
+  sudo: True
+
+- name: move Sublime Text 2 into right place
+  action: command mv '/usr/local/Sublime Text 2' /usr/local/sublime-text-2-{{st2_version}} creates=/usr/local/sublime-text-2-{{st2_version}} removes='/usr/local/Sublime Text 2'
+  sudo: True
+
+- name: create the symlink to Sublime Text 2
+  action: file src=/usr/local/sublime-text-2-{{st2_version}} dest=/usr/local/sublime-text-2 state=link force=yes
+  sudo: True
+
+- name: create ST2 desktop entry
+  action: copy src=st2.desktop dest=/usr/share/applications/st2.desktop owner=root mode=0644
+  sudo: True
+
+- name: create local folder for ST2 Package Control
+  action: file 'path=/home/{{user}}/.config/sublime-text-2/Installed Packages' state=directory
+  sudo: False
+
+- name: download ST2 Package Control
+  action: get_url url=https://sublime.wbond.net/Package%20Control.sublime-package 'dest=/home/{{user}}/.config/sublime-text-2/Installed Packages/Package Control.sublime-package'
+  sudo: False
+
+- name: symlink Sublime Text 2 for command-line usage
+  action: file src=/usr/local/sublime-text-2/sublime_text dest=/usr/local/bin/st2 state=link
+  sudo: True

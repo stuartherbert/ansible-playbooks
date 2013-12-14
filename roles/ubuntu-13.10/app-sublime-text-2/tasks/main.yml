@@ -1,0 +1,4 @@
+---
+- include: st2_inspect.yml
+- include: st2_install.yml
+  when: "st2_installed != 'true'"

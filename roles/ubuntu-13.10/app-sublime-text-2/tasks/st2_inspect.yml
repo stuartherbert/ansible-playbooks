@@ -1,0 +1,6 @@
+---
+
+- name: is Sublime Text 2 already installed?
+  action: shell if `ls -l /usr/local/sublime-text-2-{{st2_version}}` ; then echo true ; else echo false ; fi
+  register: st2_installed
+  ignore_errors: true
