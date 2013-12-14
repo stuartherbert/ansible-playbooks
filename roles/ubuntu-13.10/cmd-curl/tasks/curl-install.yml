@@ -1,0 +1,4 @@
+---
+- name: install curl
+  action: apt pkg=curl state=latest
+  sudo: True
