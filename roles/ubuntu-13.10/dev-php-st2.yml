@@ -1,0 +1,4 @@
+---
+- hosts: dev-php-st2
+  roles:
+  - app-sublime-text-2-phpide
