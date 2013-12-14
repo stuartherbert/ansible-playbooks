@@ -1,0 +1,4 @@
+---
+- name: install PHP pspell extension
+  action: apt pkg=php5-pspell state=latest
+  sudo: True

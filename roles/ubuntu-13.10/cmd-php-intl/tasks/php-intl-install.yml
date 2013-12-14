@@ -1,0 +1,4 @@
+---
+- name: install PHP intl extension
+  action: apt pkg=php5-intl state=latest
+  sudo: True

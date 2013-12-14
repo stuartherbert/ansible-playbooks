@@ -1,0 +1,5 @@
+---
+- include: php-imap-inspect.yml
+- include: php-imap-install.yml
+- include: php-imap-enable.yml
+  when: "php_imap_installed.stdout != 'true'"

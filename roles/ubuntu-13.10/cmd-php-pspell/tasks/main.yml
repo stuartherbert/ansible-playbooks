@@ -1,0 +1,2 @@
+---
+- include: php-pspell-install.yml

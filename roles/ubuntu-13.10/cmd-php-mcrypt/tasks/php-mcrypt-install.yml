@@ -1,0 +1,4 @@
+---
+- name: install PHP Mcrypt extension
+  action: apt pkg=php5-mcrypt state=latest
+  sudo: True

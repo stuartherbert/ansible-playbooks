@@ -1,0 +1,4 @@
+---
+- name: install PHP SQLite extension
+  action: apt pkg=php5-sqlite state=latest
+  sudo: True

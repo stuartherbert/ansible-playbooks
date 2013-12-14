@@ -1,0 +1,26 @@
+---
+- hosts: dev-php
+  roles:
+  - cmd-git
+  - cmd-php
+  - cmd-php-apcu
+  - cmd-php-curl
+  - cmd-php-gd
+  - cmd-php-imagick
+  - cmd-php-imap
+  - cmd-php-intl
+  - cmd-php-json
+  - cmd-php-ldap
+  - cmd-php-mcrypt
+  - cmd-php-memcached
+  - cmd-php-mongo
+  - cmd-php-mysql
+  - cmd-php-ncurses
+  - cmd-php-pspell
+  - cmd-php-recode
+  - cmd-php-redis
+  - cmd-php-sqlite
+  - cmd-php-tidy
+  - cmd-php-xdebug
+  - cmd-php-yaml
+  - cmd-phix

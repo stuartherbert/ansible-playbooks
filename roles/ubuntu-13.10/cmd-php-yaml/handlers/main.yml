@@ -1,0 +1,4 @@
+---
+- name: php5enmod yaml
+  action: command php5enmod yaml
+  sudo: True

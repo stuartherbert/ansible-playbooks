@@ -1,0 +1,4 @@
+---
+- name: php5enmod imap
+  action: command php5enmod imap
+  sudo: True

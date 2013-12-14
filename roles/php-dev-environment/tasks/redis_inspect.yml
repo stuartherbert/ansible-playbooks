@@ -1,5 +1,0 @@
----
-
-- name: is PHP Redis extension already built?
-  action: shell if `php -i | grep -i redis > /dev/null` ; then echo true ; else echo false ; fi
-  register: php_redis_installed

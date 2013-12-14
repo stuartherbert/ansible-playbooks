@@ -1,0 +1,6 @@
+---
+- include: php-redis-inspect.yml
+- include: php-redis-install.yml
+  when: "php_redis_installed.stdout != 'true'"
+- include: php-redis-enable.yml
+  when: "php_redis_installed.stdout != 'true'"

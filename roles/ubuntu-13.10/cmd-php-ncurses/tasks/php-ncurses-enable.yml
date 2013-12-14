@@ -1,0 +1,7 @@
+---
+
+- name: enable PHP ncurses extension
+  action: copy src=ncurses.ini dest=/etc/php5/mods-available/ncurses.ini
+  sudo: True
+  notify:
+  - php5enmod ncurses

@@ -1,0 +1,5 @@
+---
+- include: php-mongo-inspect.yml
+- include: php-mongo-install.yml
+- include: php-mongo-enable.yml
+  when: "php_mongo_installed.stdout != 'true'"

@@ -1,0 +1,2 @@
+---
+- include: php-sqlite-install.yml

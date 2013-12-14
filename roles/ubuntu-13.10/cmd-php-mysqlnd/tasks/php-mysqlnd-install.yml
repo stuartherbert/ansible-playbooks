@@ -1,0 +1,4 @@
+---
+- name: install PHP MySQL Native Driver extension
+  action: apt pkg=php5-mysqlnd state=latest
+  sudo: True

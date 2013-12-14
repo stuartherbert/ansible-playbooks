@@ -1,0 +1,4 @@
+---
+- name: install PHP IMAP extension
+  action: apt pkg=php5-imap state=latest
+  sudo: True

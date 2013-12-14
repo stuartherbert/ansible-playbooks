@@ -1,0 +1,6 @@
+---
+- name: enable PHP Mongo extension
+  action: copy src=mongo.ini dest=/etc/php5/mods-available/mongo.ini owner=root group=root mode=0644
+  sudo: True
+  notify:
+  - php5enmod mongo

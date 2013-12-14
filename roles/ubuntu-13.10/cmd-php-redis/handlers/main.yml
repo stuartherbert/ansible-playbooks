@@ -1,0 +1,4 @@
+---
+- name: php5enmod redis
+  action: command php5enmod redis
+  sudo: True

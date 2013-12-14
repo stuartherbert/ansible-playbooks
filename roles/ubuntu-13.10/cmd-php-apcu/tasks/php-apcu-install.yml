@@ -1,0 +1,4 @@
+---
+- name: install PHP APCU extension
+  action: apt pkg=php5-apcu state=latest
+  sudo: True

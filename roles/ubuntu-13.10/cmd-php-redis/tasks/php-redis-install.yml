@@ -1,0 +1,21 @@
+---
+
+- name: download PHP Redis extension
+  action: git repo=https://github.com/nicolasff/phpredis.git dest=/tmp/phpredis
+  sudo: False
+
+- name: prepare PHP Redis extension
+  action: command phpize chdir=/tmp/phpredis
+  sudo: False
+
+- name: configure PHP Redis extension
+  action: command ./configure chdir=/tmp/phpredis
+  sudo: False
+
+- name: compile PHP Redis extension
+  action: command make chdir=/tmp/phpredis
+  sudo: False
+
+- name: install PHP Redis extension
+  action: command make install chdir=/tmp/phpredis
+  sudo: True

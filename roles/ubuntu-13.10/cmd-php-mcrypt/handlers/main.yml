@@ -1,0 +1,4 @@
+---
+- name: php5enmod mcrypt
+  action: command php5enmod mcrypt
+  sudo: True

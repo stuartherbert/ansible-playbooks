@@ -1,0 +1,7 @@
+---
+
+- name: enable PHP redis extension
+  action: copy src=redis.ini dest=/etc/php5/mods-available/redis.ini
+  sudo: True
+  notify:
+  - php5enmod redis

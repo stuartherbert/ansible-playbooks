@@ -1,0 +1,4 @@
+---
+- name: php5enmod ncurses
+  action: command php5enmod ncurses
+  sudo: True

@@ -1,0 +1,12 @@
+---
+
+- name: install libncursesw5-dev
+  action: apt pkg=libncursesw5-dev state=latest
+  sudo: True
+
+- name: copy ncurses input
+  action: copy src=php-ncurses-input.txt dest=/tmp/php-ncurses-input.txt mode=0600
+
+- name: install ncurses pecl module
+  action: shell pecl install ncurses < /tmp/php-ncurses-input.txt
+  sudo: True

@@ -1,0 +1,4 @@
+---
+- name: install the Pear and PECL commands
+  action: apt pkg=php-pear state=latest
+  sudo: True

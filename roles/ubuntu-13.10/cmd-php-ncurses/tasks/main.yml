@@ -1,0 +1,6 @@
+---
+- include: php-ncurses-inspect.yml
+- include: php-ncurses-install.yml
+  when: "php_ncurses_installed.stdout != 'true'"
+- include: php-ncurses-enable.yml
+  when: "php_ncurses_enabled.stdout != 'true'"

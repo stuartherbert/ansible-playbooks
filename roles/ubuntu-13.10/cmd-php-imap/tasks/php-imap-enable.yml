@@ -1,0 +1,6 @@
+---
+- name: enable PHP IMAP extension
+  action: copy src=imap.ini dest=/etc/php5/mods-available/imap.ini owner=root group=root mode=0644
+  sudo: True
+  notify:
+  - php5enmod imap

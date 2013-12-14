@@ -1,0 +1,4 @@
+---
+- name: install PHP XHProf extension
+  action: apt pkg=php5-xhprof state=latest
+  sudo: True

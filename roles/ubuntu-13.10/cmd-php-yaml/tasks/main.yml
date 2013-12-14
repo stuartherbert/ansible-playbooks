@@ -1,0 +1,6 @@
+---
+- include: php-yaml-inspect.yml
+- include: php-yaml-install.yml
+  when: "php_yaml_installed.stdout != 'true'"
+- include: php-yaml-enable.yml
+  when: "php_yaml_enabled.stdout != 'true'"

@@ -1,0 +1,4 @@
+---
+- name: install PHP JSON extension
+  action: apt pkg=php5-json state=latest
+  sudo: True

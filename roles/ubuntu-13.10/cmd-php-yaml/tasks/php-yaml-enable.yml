@@ -1,0 +1,7 @@
+---
+
+- name: enable PHP yaml extension
+  action: copy src=yaml.ini dest=/etc/php5/mods-available/yaml.ini
+  sudo: True
+  notify:
+  - php5enmod yaml

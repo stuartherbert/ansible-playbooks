@@ -1,0 +1,9 @@
+---
+
+- name: is PHP YAML extension installed?
+  action: shell executable=/bin/bash if `pecl list yaml > /dev/null 2>&1` ; then echo true ; else echo false ; fi
+  register: php_yaml_installed
+
+- name: is PHP YAML extension installed and enabled?
+  action: shell executable=/bin/bash if `php -m | grep yaml > /dev/null 2>&1` ; then echo true ; else echo false ; fi
+  register: php_yaml_enabled

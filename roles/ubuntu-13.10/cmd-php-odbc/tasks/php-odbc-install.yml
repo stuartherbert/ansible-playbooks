@@ -1,0 +1,4 @@
+---
+- name: install PHP ODBC extension
+  action: apt pkg=php5-odbc state=latest
+  sudo: True

@@ -1,0 +1,4 @@
+---
+- name: install PHP CLI
+  action: apt pkg=php5-cli
+  sudo: True

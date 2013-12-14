@@ -1,0 +1,12 @@
+---
+
+- name: install libYAML-dev
+  action: apt pkg=libyaml-dev state=latest
+  sudo: True
+
+- name: copy YAML input
+  action: copy src=php-yaml-input.txt dest=/tmp/php-yaml-input.txt mode=0600
+
+- name: install YAML pecl module
+  action: shell pecl install yaml < /tmp/php-yaml-input.txt
+  sudo: True

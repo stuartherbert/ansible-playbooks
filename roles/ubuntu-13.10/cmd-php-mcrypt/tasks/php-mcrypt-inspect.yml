@@ -1,0 +1,5 @@
+---
+
+- name: is PHP Mcrypt extension already enabled?
+  action: shell if `php -m | grep mcrypt > /dev/null` ; then echo true ; else echo false ; fi
+  register: php_mcrypt_installed

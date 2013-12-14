@@ -1,0 +1,5 @@
+---
+
+- name: is PHP Mongo extension already enabled?
+  action: shell if `php -m | grep mongo > /dev/null` ; then echo true ; else echo false ; fi
+  register: php_mongo_installed

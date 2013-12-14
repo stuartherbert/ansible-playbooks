@@ -1,0 +1,4 @@
+---
+- name: install PHP recode extension
+  action: apt pkg=php5-recode state=latest
+  sudo: True

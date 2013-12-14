@@ -1,0 +1,4 @@
+---
+- name: install PHP MongoDB extension
+  action: apt pkg=php5-mongo state=latest
+  sudo: True

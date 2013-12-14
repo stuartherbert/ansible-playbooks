@@ -1,0 +1,4 @@
+---
+- name: install PHP Tidy extension
+  action: apt pkg=php5-tidy state=latest
+  sudo: True

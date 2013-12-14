@@ -1,0 +1,5 @@
+---
+
+- name: is PHP IMAP extension already enabled?
+  action: shell if `php -m | grep imap > /dev/null` ; then echo true ; else echo false ; fi
+  register: php_imap_installed

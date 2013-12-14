@@ -1,0 +1,4 @@
+---
+- name: install PHP GD extension
+  action: apt pkg=php5-gd state=latest
+  sudo: True

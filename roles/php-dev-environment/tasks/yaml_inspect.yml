@@ -1,6 +1,0 @@
----
-
-- name: is PHP YAML extension already built?
-  action: shell if `php -i | grep yaml > /dev/null` ; then echo true ; else echo false ; fi
-  register: php_yaml_installed
-  ignore_errors: True

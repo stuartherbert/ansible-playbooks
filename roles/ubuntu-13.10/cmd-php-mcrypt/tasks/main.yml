@@ -1,0 +1,5 @@
+---
+- include: php-mcrypt-inspect.yml
+- include: php-mcrypt-install.yml
+- include: php-mcrypt-enable.yml
+  when: "php_mcrypt_installed.stdout != 'true'"

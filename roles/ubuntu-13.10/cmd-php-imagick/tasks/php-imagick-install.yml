@@ -1,0 +1,4 @@
+---
+- name: install PHP ImageMagick extension
+  action: apt pkg=php5-imagick state=latest
+  sudo: True

@@ -1,0 +1,4 @@
+---
+- name: install PHP Postgresql extension
+  action: apt pkg=php5-pgsql state=latest
+  sudo: True

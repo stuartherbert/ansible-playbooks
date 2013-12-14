@@ -1,0 +1,4 @@
+---
+- name: install PHP extension building tools
+  action: apt pkg=php5-dev state=latest
+  sudo: True

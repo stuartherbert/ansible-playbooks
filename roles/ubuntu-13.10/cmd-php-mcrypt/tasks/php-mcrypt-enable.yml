@@ -1,0 +1,6 @@
+---
+- name: enable PHP Mcrypt extension
+  action: copy src=mcrypt.ini dest=/etc/php5/mods-available/mcrypt.ini owner=root group=root mode=0644
+  sudo: True
+  notify:
+  - php5enmod mcrypt

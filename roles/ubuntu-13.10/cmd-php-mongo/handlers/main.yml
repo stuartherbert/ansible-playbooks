@@ -1,0 +1,4 @@
+---
+- name: php5enmod mongo
+  action: command php5enmod mongo
+  sudo: True

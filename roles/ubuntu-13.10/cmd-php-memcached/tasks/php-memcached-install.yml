@@ -1,0 +1,4 @@
+---
+- name: install PHP Memcached extension
+  action: apt pkg=php5-memcached state=latest
+  sudo: True
