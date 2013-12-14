@@ -1,0 +1,4 @@
+---
+- name: install Jekyll
+  action: command gem install jekyll
+  sudo: True

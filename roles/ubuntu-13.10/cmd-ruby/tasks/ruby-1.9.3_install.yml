@@ -1,0 +1,4 @@
+---
+- name: install Ruby 1.9.3
+  action: apt pkg=ruby1.9.3 state=latest
+  sudo: True

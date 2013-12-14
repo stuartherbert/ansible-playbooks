@@ -1,0 +1,4 @@
+---
+- include: jekyll_inspect.yml
+- include: jekyll_install.yml
+  when: "jekyll_installed != 'true'"
