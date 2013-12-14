@@ -1,0 +1,6 @@
+---
+
+- name: enable mod_rewrite for Apache
+  action: command a2enmod rewrite
+  sudo: True
+  notify: restart Apache

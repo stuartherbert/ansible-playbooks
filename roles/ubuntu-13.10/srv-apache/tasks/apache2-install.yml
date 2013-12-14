@@ -1,0 +1,4 @@
+---
+- name: install Apache2
+  action: apt pkg=apache2 state=latest
+  sudo: True

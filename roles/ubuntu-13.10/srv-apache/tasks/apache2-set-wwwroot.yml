@@ -1,0 +1,18 @@
+---
+- name: set Apache to run as dev user
+  action: shell sed -e 's|APACHE_RUN_USER=www-data|APACHE_RUN_USER={{user}}|g;' -i /etc/apache2/envvars
+  sudo: True
+  notify:
+  - restart Apache
+
+- name: set Apache to run as dev group
+  action: shell sed -e 's|APACHE_RUN_GROUP=www-data|APACHE_RUN_GROUP={{group}}|g' -i /etc/apache2/envvars
+  sudo: True
+  notify:
+  - restart Apache
+
+- name: set wwwroot to be owned by the dev user
+  action: command chown -R {{user}}:{{group}} {{apache_webroot}}
+  sudo: True
+  notify:
+  - restart Apache

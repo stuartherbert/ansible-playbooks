@@ -1,0 +1,16 @@
+---
+- name: start Apache
+  action: command service apache2 start
+  sudo: True
+
+- name: stop Apache
+  action: command service apache2 stop
+  sudo: True
+
+- name: restart Apache
+  action: command service apache2 restart
+  sudo: True
+
+- name: reload Apache
+  action: command service apache2 reload
+  sudo: True
