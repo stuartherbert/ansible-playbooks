@@ -1,0 +1,24 @@
+---
+# generic development utils that every box should have
+- include: roles/ubuntu-13.10/dev-environment.yml
+
+# support for developing documentation published via gh_pages branches
+- include: roles/ubuntu-13.10/dev-github-pages.yml
+
+# support for nodejs
+- include: roles/ubuntu-13.10/dev-nodejs.yml
+
+# support for PHP
+- include: roles/ubuntu-13.10/dev-php.yml
+
+# support for PHP development using ST2
+- include: roles/ubuntu-13.10/dev-php-st2.yml
+
+# support for using local virtual machines
+- include: roles/ubuntu-13.10/dev-virtualmachines.yml
+
+# support for developing on hubflow
+- include: roles/ubuntu-13.10/project-hubflow.yml
+
+# support for developing on phix
+- include: roles/ubuntu-13.10/project-phix.yml
