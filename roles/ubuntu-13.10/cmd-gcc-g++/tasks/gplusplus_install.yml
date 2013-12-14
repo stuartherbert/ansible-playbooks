@@ -1,0 +1,4 @@
+---
+- name: install GCC G++ compiler
+  action: apt pkg=g++ state=latest
+  sudo: True
