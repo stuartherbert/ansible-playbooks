@@ -1,0 +1,15 @@
+---
+- name: download Redis source code
+  action: get_url url=http://download.redis.io/releases/redis-{{redis_version}}.tar.gz dest=/tmp/redis-{{redis_version}}.tar.gz
+  sudo: False
+
+- name: unpack the Redis source code
+  action: command tar -zxf /tmp/redis-{{redis_version}}.tar.gz chdir=/tmp
+  sudo: False
+
+- name: compile Redis Server
+  action: command make chdir=/tmp/redis-{{redis_version}}
+
+- name: install Redis Server
+  action: command make install chdir=/tmp/redis-{{redis_version}}
+  sudo: True

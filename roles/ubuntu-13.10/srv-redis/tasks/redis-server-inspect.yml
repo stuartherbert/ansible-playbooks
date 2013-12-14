@@ -1,0 +1,4 @@
+---
+- name: is Redis server already installed?
+  action: shell executable=/bin/bash if [[ -x /usr/local/bin/redis-server ]] ; then echo true ; else echo false ; fi
+  register: redis_server_installed

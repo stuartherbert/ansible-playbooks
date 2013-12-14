@@ -1,0 +1,4 @@
+---
+- include: redis-server-inspect.yml
+- include: redis-server-install.yml
+  when: "redis_server_installed.stdout != 'true'"
