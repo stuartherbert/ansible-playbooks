@@ -1,17 +1,35 @@
 ---
+# how are we logging in?
+# comment this out if working with a remote host
 ansible_connection: local
+
+# who are we logging in as?
 user: stuart
 group: stuart
 
+# operating system
+os: ubuntu/13.10
+
 # Apache2 settings
-webroot: /var/www
+apache_webroot: /var/www
+
+# DragonDisk version
+dragondisk_version: 1.0.5
+
+# HubFlow settings
+hubflow_version: develop
 
 # NodeJS settings
-node_version: 0.10.20
-
-# Phix development settings
-phix_dragondisk_version: 1.0.5
-phix_github_user: stuartherbert
+nodejs_version: 0.10.23
 
 # Redis Server settings
-redis_version: 2.6.14
+redis_version: 2.8.3
+
+# Sublime Text 2 settings
+st2_version: 2.0.2
+
+# Vagrant settings
+vagrant_version: 1.4.0
+
+# ZeroMQ settings
+zeromq_version: 4.0.3
