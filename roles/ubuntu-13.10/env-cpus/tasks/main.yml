@@ -1,0 +1,4 @@
+---
+- name: how many CPUs are available for compiling?
+  action: shell cat /proc/cpuinfo | grep processor | wc -l
+  register: env_cpus
