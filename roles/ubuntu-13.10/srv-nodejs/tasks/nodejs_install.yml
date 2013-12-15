@@ -9,7 +9,7 @@
   sudo: False
 
 - name: compile NodeJS
-  action: command make -j chdir=/tmp/node-v{{nodejs_version}}
+  action: command make -j{{env_cpus}} chdir=/tmp/node-v{{nodejs_version}}
   sudo: False
 
 - name: install NodeJS
