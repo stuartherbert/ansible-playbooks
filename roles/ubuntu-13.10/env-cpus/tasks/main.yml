@@ -1,4 +1,8 @@
 ---
 - name: how many CPUs are available for compiling?
   action: shell cat /proc/cpuinfo | grep processor | wc -l
-  register: env_cpus
+  register: env_cpus_installed
+
+- name: register the number of CPUs
+  set_fact:
+    env_cpus: "{{env_cpus_installed.stdout}}"
